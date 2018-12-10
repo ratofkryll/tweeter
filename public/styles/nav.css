@@ -9,7 +9,17 @@
   padding: 0 2em;
 }
 
-.logo {
+#nav-bar .logo {
   height: 80px;
   width: 80px;
+  margin-right: 10px;
+  float: left;
+}
+
+#nav-bar .header {
+  font-size: 2em;
+  margin-left: 10px;
+  line-height: 80px;
+  vertical-align: center;
+  float: left;
 }
