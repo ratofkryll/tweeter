@@ -21,8 +21,10 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-.container {
+main {
   margin-top: 80px;
+  width: 450px;
+  background-color: #fff;
 }
 
 /*
