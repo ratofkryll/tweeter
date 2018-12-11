@@ -20,3 +20,7 @@
   font-style: italic;
   float: right;
 }
+
+.counter-negative-value {
+  color: #f00;
+}

@@ -5,7 +5,10 @@ $(document).ready(function() {
 
   $('.new-tweet textarea').on('keyup', function (event) {
     const textInput = $(this).val();
-    console.log(140 - textInput.length);
+    const counter = $(this).siblings('.counter');
+
+    counter.text(140 - textInput.length);
+    counter.toggleClass('counter-negative-value', textInput.length > 140);
   });
 
 });
