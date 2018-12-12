@@ -16,7 +16,6 @@ $(document).ready(function() {
   }
 
   // renderTweets(data);
-
   function createTweetElement(tweet) {
     let $tweetContainer = $('<div>').addClass('tweets-container');
     let $tweetHeader = $('<header>');
@@ -29,7 +28,7 @@ $(document).ready(function() {
       `<span class="header-handle">${tweet.user.handle}</span>`
     );
 
-    $tweetContent.append(`<p>${tweet.content.text}</p>`);
+    $tweetContent.append('<p>').text(tweet.content.text);
 
     $tweetFooter.append(
       `<span class="posted-time">${moment(tweet.created_at).fromNow()}</span>
@@ -63,10 +62,11 @@ $(document).ready(function() {
       alert('Your tweet must be less than 140 characters.');
       return;
     }
+    console.log($(this).val());
+    const $postTweet = $.post('/tweets', $(this).serialize());
 
-    const postTweet = $.post('/tweets', $(this).serialize());
 
-    postTweet.done(function (data) {
+    $postTweet.done(function (data) {
       $('.new-tweet textarea').val('');
       $('.new-tweet .counter').text('140');
 
