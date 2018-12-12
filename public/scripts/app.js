@@ -68,7 +68,7 @@ $(document).ready(function() {
   console.log(renderTweets(data));
 
   function createTweetElement(tweet) {
-    let $tweetContainer = $('<section>').addClass('tweets-container');
+    let $tweetContainer = $('<div>').addClass('tweets-container');
     let $tweetHeader = $('<header>');
     let $tweetContent = $('<article>').addClass('tweet-content');
     let $tweetFooter = $('<footer>');
