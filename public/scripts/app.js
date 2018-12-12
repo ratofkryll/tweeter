@@ -53,6 +53,7 @@ $(document).ready(function() {
     }
   ];
 
+  // Create & render tweet html
   function renderTweets (tweetData) {
     const tweetWrapper = $('#tweets-wrapper');
     for (let i in tweetData) {
@@ -88,5 +89,11 @@ $(document).ready(function() {
 
     return $tweetContainer;
   }
+
+  // Handle new tweet submission
+  $('#compose-tweet').submit(function (e) {
+    e.preventDefault();
+    $.post('/tweets', $(this).serialize());
+  });
 
 });
