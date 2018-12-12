@@ -10,7 +10,7 @@ $(document).ready(function() {
   function renderTweets (tweetData) {
     const tweetWrapper = $('#tweets-wrapper');
     for (let i in tweetData) {
-      tweetWrapper.append(createTweetElement(tweetData[i]));
+      tweetWrapper.prepend(createTweetElement(tweetData[i]));
     };
     return tweetWrapper;
   }
@@ -45,9 +45,20 @@ $(document).ready(function() {
 
   // Handle new tweet POST
   $('#compose-tweet').submit(function (e) {
-    const charCount = $('.new-tweet textarea').val().length;
-    console.log(charCount);
+    const $charCount = $('.new-tweet textarea').val().length;
+
     e.preventDefault();
+
+    if ($charCount === 0) {
+      alert('Please enter up to 140 characters.')
+      return;
+    }
+
+    if($charCount > 140) {
+      alert('Your tweet must be less than 140 characters.');
+      return;
+    }
+
     $.post('/tweets', $(this).serialize());
   });
 
