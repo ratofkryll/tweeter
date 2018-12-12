@@ -34,7 +34,7 @@ $(document).ready(function() {
       "content": {
         "text": "Je pense , donc je suis"
       },
-      "created_at": 1461113959088
+      "created_at": 1544642915000
     },
     {
       "user": {
@@ -55,17 +55,13 @@ $(document).ready(function() {
 
   function renderTweets (tweetData) {
     const tweetWrapper = $('#tweets-wrapper');
-
-    console.log(tweetWrapper);
-
     for (let i in tweetData) {
       tweetWrapper.append(createTweetElement(tweetData[i]));
-      console.log(tweetWrapper);
     };
     return tweetWrapper;
   }
 
-  console.log(renderTweets(data));
+  renderTweets(data);
 
   function createTweetElement(tweet) {
     let $tweetContainer = $('<div>').addClass('tweets-container');
