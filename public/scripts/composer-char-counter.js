@@ -8,5 +8,5 @@ $(document).ready(function() {
     counter.text(140 - charCount.length);
     counter.toggleClass('counter-negative-value', charCount.length > 140);
   });
-  
+
 });

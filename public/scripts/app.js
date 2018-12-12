@@ -45,6 +45,8 @@ $(document).ready(function() {
 
   // Handle new tweet POST
   $('#compose-tweet').submit(function (e) {
+    const charCount = $('.new-tweet textarea').val().length;
+    console.log(charCount);
     e.preventDefault();
     $.post('/tweets', $(this).serialize());
   });
