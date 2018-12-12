@@ -1,5 +1,5 @@
 /* General */
-.tweet {
+.tweet-content {
   margin: 2em;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -7,7 +7,7 @@
 }
 
 /* Tweet header */
-.tweet header {
+.tweet-content header {
   width: 100%;
   height: 67px;
   padding: 0.5em;
@@ -20,7 +20,7 @@
   float: left;
 }
 
-.header-heading {
+.header-name {
   margin-top: 0;
   margin-left: 0.5em;
   float: left;
@@ -34,7 +34,7 @@
 
 /* Tweet body */
 
-.tweet article {
+.tweet {
   display: flex;
   align-items: center;
   height: 90px;
@@ -42,7 +42,7 @@
 }
 
 /* Tweet footer */
-.tweet footer {
+.tweet-content footer {
   width: 100%;
   height: 35px;
   padding: 0 0.5em;
@@ -67,14 +67,14 @@
 }
 
 /* Hover behaviour */
-.tweet:hover {
+.tweet-content:hover {
   border: 1px solid #ccc;
 }
 
-.tweet:hover header {
+.tweet-content:hover header {
   opacity: 1;
 }
 
-.tweet:hover footer .icon {
+.tweet-content:hover footer .icon {
   visibility: visible;
 }
