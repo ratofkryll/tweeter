@@ -15,7 +15,6 @@ $(document).ready(function() {
     return tweetWrapper;
   }
 
-  // renderTweets(data);
   function createTweetElement(tweet) {
     let $tweetContainer = $('<div>').addClass('tweets-container');
     let $tweetHeader = $('<header>');

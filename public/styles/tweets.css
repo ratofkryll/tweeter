@@ -21,7 +21,9 @@
 }
 
 .header-name {
+  width: 40%;
   margin-top: 0;
+  margin-bottom: 0;
   margin-left: 0.5em;
   float: left;
 }
@@ -33,7 +35,6 @@
 }
 
 /* Tweet body */
-
 .tweet-content {
   display: flex;
   align-items: center;
