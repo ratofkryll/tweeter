@@ -43,13 +43,18 @@ $(document).ready(function() {
     return $tweetContainer;
   }
 
+  // Handle tweet data GET
+  $.getJSON('/tweets', function (data) {
+    renderTweets(data);
+  });
+
   // Handle new tweet POST
   $('#compose-tweet').submit(function (e) {
-    const $charCount = $('.new-tweet textarea').val().length;
-
     e.preventDefault();
 
-    if ($charCount === 0) {
+    const $charCount = $('.new-tweet textarea').val().length;
+
+    if ($charCount === 0 || $charCount === ' ') {
       alert('Please enter up to 140 characters.')
       return;
     }
@@ -59,12 +64,16 @@ $(document).ready(function() {
       return;
     }
 
-    $.post('/tweets', $(this).serialize());
-  });
+    const postTweet = $.post('/tweets', $(this).serialize());
 
-  // Handle tweet data GET
-  $.getJSON('/tweets', function (data) {
-    renderTweets(data);
-  });
+    postTweet.done(function (data) {
+      $('.new-tweet textarea').val('');
+      $('.new-tweet .counter').text('140');
 
+      $.getJSON('/tweets', function (data) {
+        $('#tweets-wrapper').empty();
+        renderTweets(data);
+      });
+    });
+  });
 });
