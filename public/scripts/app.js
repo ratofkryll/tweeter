@@ -50,7 +50,7 @@ $(document).ready(function() {
   $('#compose-tweet').submit(function (e) {
     e.preventDefault();
 
-    const $charCount = $('.new-tweet textarea').val().length;
+    const $charCount = $('#new-tweet textarea').val().length;
 
     if ($charCount === 0 || $charCount === ' ') {
       alert('Please enter up to 140 characters.')
@@ -65,8 +65,8 @@ $(document).ready(function() {
     const $postTweet = $.post('/tweets', $(this).serialize());
 
     $postTweet.done(function (data) {
-      $('.new-tweet textarea').val('');
-      $('.new-tweet .counter').text('140');
+      $('#new-tweet textarea').val('');
+      $('#new-tweet .counter').text('140');
 
       $.getJSON('/tweets', function (data) {
         $('#tweets-wrapper').empty();
@@ -82,6 +82,9 @@ $(document).ready(function() {
     $('.icon-hover').attr('src', '/images/nav/compose-icon-green.png');
   });
 
-  $('.compose').click()
-
+  $('.compose').click(function () {
+    $('#new-tweet').slideToggle('fast', function () {
+      $('#new-tweet textarea').focus();
+    });
+  });
 });

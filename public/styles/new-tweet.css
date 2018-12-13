@@ -1,26 +1,35 @@
-.new-tweet {
+#new-tweet {
   margin: 2em;
   padding: 1em;
   background-color: #eee;
   border: 1px solid #ccc;
   border-radius: 5px;
+  display: none;
 }
 
-.new-tweet h2 {
+#new-tweet h2 {
   margin-top: 0;
   border-bottom: 1px solid #244751;
 }
 
-.new-tweet textarea {
+#new-tweet textarea {
   width: 100%;
   padding: 0.35em;
 }
 
-.new-tweet .counter {
+#new-tweet .counter {
   font-style: italic;
   float: right;
 }
 
 .counter-negative-value {
   color: #f00;
+}
+
+.error-message {
+  margin: 1em 0 0 0;
+  padding: 0;
+  color: #f00;
+  font-style: italic;
+  display: none;
 }
