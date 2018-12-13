@@ -24,3 +24,36 @@
   vertical-align: center;
   float: left;
 }
+
+#nav-bar .compose {
+  width: 150px;
+  height: 64px;
+  margin-top: 8px;
+  padding: 0 10px;
+  text-align: center;
+  color: #00a087;
+  font-size: 1.2em;
+  background-color: #ebfcff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  float:right;
+}
+
+#nav-bar .compose span {
+  margin: 0;
+  line-height: 64px;
+  vertical-align: center;
+}
+
+#nav-bar .compose img {
+  position: relative;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+}
+
+#nav-bar .compose:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+}

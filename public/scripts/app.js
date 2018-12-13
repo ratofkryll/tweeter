@@ -61,9 +61,8 @@ $(document).ready(function() {
       alert('Your tweet must be less than 140 characters.');
       return;
     }
-    console.log($(this).val());
-    const $postTweet = $.post('/tweets', $(this).serialize());
 
+    const $postTweet = $.post('/tweets', $(this).serialize());
 
     $postTweet.done(function (data) {
       $('.new-tweet textarea').val('');
@@ -75,4 +74,8 @@ $(document).ready(function() {
       });
     });
   });
+
+  // Show/hide tweet submission form & nav button behaviour
+  
+
 });
