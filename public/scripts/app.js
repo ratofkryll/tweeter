@@ -53,12 +53,16 @@ $(document).ready(function() {
     const $charCount = $('#new-tweet textarea').val().length;
 
     if ($charCount === 0 || $charCount === ' ') {
-      alert('Please enter up to 140 characters.')
+      $('.error-message').slideDown('fast', function () {
+        $('.error-message').text('Please enter up to 140 characters.');
+      });
       return;
     }
 
     if($charCount > 140) {
-      alert('Your tweet must be less than 140 characters.');
+      $('.error-message').slideDown('fast', function () {
+        $('.error-message').text('Your tweet must be less than 140 characters.');
+      });
       return;
     }
 
