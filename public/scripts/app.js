@@ -54,23 +54,24 @@ $(document).ready(function() {
     e.preventDefault();
 
     const $charCount = $('#new-tweet textarea').val().length;
+    const $error = $('.error-message');
 
-    if ($('.error-message').height() > 0) {
-      $('.error-message').slideUp('fast', function () {
-        $('.error-message').text('');
+    if ($error.height() > 0) {
+      $error.slideUp('fast', function () {
+        $error.text('');
       });
     }
 
     if ($charCount === 0 || $charCount === ' ') {
-      $('.error-message').slideDown('fast', function () {
-        $('.error-message').text('Please enter up to 140 characters.');
+      $error.slideDown('fast', function () {
+        $error.text('Please enter up to 140 characters.');
       });
       return;
     }
 
     if ($charCount > 140) {
-      $('.error-message').slideDown('fast', function () {
-        $('.error-message').text('Your tweet must be less than 140 characters.');
+      $error.slideDown('fast', function () {
+        $error.text('Your tweet must be less than 140 characters.');
       });
       return;
     }
