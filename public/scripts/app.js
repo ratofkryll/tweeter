@@ -76,6 +76,12 @@ $(document).ready(function() {
   });
 
   // Show/hide tweet submission form & nav button behaviour
-  
+  $('.compose').hover(function () {
+    $('.icon-hover').attr('src', '/images/nav/compose-icon-bw.png');
+  }, function(){
+    $('.icon-hover').attr('src', '/images/nav/compose-icon-green.png');
+  });
+
+  $('.compose').click()
 
 });
