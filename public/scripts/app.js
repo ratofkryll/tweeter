@@ -19,7 +19,9 @@ $(document).ready(function() {
     let $tweetContainer = $('<div>').addClass('tweets-container');
     let $tweetHeader = $('<header>');
     let $tweetContent = $('<article>').addClass('tweet-content');
+    let $tweetText = $('<p>');
     let $tweetFooter = $('<footer>');
+
 
     $tweetHeader.append(
       `<img class="header-img" src="${tweet.user.avatars.small}" alt="avatar" />`,
@@ -27,7 +29,8 @@ $(document).ready(function() {
       `<span class="header-handle">${tweet.user.handle}</span>`
     );
 
-    $tweetContent.append('<p>').text(tweet.content.text);
+    $tweetText.text(tweet.content.text);
+    $tweetContent.append($tweetText);
 
     $tweetFooter.append(
       `<span class="posted-time">${moment(tweet.created_at).fromNow()}</span>
@@ -65,7 +68,7 @@ $(document).ready(function() {
       return;
     }
 
-    if($charCount > 140) {
+    if ($charCount > 140) {
       $('.error-message').slideDown('fast', function () {
         $('.error-message').text('Your tweet must be less than 140 characters.');
       });
