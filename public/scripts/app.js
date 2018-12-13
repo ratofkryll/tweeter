@@ -52,6 +52,12 @@ $(document).ready(function() {
 
     const $charCount = $('#new-tweet textarea').val().length;
 
+    if ($('.error-message').height() > 0) {
+      $('.error-message').slideUp('fast', function () {
+        $('.error-message').text('');
+      });
+    }
+
     if ($charCount === 0 || $charCount === ' ') {
       $('.error-message').slideDown('fast', function () {
         $('.error-message').text('Please enter up to 140 characters.');
