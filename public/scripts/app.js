@@ -46,7 +46,7 @@ $(document).ready(() => {
   });
 
   // Handle new tweet POST
-  $('#compose-tweet').submit((e) => {
+  $('#compose-tweet').submit(function (e) {
     e.preventDefault();
 
     const $charCount = $('#new-tweet textarea').val().length;
