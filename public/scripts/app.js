@@ -1,11 +1,5 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-
 $(document).ready(function() {
+
   // Create & render tweet html
   function renderTweets (tweetData) {
     const tweetWrapper = $('#tweets-wrapper');
@@ -92,7 +86,7 @@ $(document).ready(function() {
   // Show/hide tweet submission form & nav button behaviour
   $('.compose').hover(function () {
     $('.icon-hover').attr('src', '/images/nav/compose-icon-bw.png');
-  }, function(){
+  }, function() {
     $('.icon-hover').attr('src', '/images/nav/compose-icon-green.png');
   });
 
