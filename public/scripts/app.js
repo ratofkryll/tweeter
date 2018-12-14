@@ -2,26 +2,26 @@ $(document).ready(() => {
 
   // Create & render tweet html
   function renderTweets (tweetData) {
-    const tweetWrapper = $('#tweets-wrapper');
-    for (let i in tweetData) {
-      tweetWrapper.prepend(createTweetElement(tweetData[i]));
-    };
-    return tweetWrapper;
+    const $tweetWrapper = $('#tweets-wrapper');
+    $.each(tweetData, (i) => {
+      $tweetWrapper.prepend(createTweetElement(tweetData[i]));
+    });
+    return $tweetWrapper;
   }
 
   function createTweetElement(tweet) {
+    const $tweetUser = tweet.user;
     let $tweetContainer = $('<div>').addClass('tweets-container');
     let $tweetHeader = $('<header>');
     let $tweetContent = $('<article>').addClass('tweet-content');
     let $tweetText = $('<p>');
     let $tweetFooter = $('<footer>');
 
-
-    $tweetHeader.append(
-      `<img class="header-img" src="${tweet.user.avatars.small}" alt="avatar" />`,
-      `<h2 class="header-name">${tweet.user.name}</h2>`,
-      `<span class="header-handle">${tweet.user.handle}</span>`
-    );
+    $tweetHeader.append(`
+      <img class="header-img" src="${$tweetUser.avatars.small}" alt="avatar" />
+      <h2 class="header-name">${$tweetUser.name}</h2>
+      <span class="header-handle">${$tweetUser.handle}</span>
+    `);
 
     $tweetText.text(tweet.content.text);
     $tweetContent.append($tweetText);
@@ -52,12 +52,14 @@ $(document).ready(() => {
     const $charCount = $('#new-tweet textarea').val().length;
     const $error = $('.error-message');
 
+    // Hides any visible error message on submit
     if ($error.height() > 0) {
       $error.slideUp('fast', () => {
         $error.text('');
       });
     }
 
+    // Slides down an error if tweet chars === 0 or > 140 or ' '
     if ($charCount === 0 || $charCount === ' ') {
       $error.slideDown('fast', () => {
         $error.text('Please enter up to 140 characters.');
@@ -73,7 +75,9 @@ $(document).ready(() => {
     }
 
     const $postTweet = $.post('/tweets', $(this).serialize());
+    const $textarea = $('#new-tweet textarea');
 
+    // Resets compose textarea & char counter on submit & reloads tweets tweetWrapper to display new tweet.
     $postTweet.done((data) => {
       $('#new-tweet textarea').val('');
       $('#new-tweet .counter').text('140');

@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
     <title>Tweeter - Home Page</title>
 
     <!-- Favicon -->
@@ -32,8 +33,9 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png" alt="Hummingbird logo" />
       <span class="header">Tweeter</span>
-      <div class="compose">
+      <button type="button" class="compose" />
         <span><i class="far fa-edit"></i> Compose</span>
+      </button>
       </div>
     </nav>
     <main class="container">
@@ -41,7 +43,7 @@
         <h2>Compose Tweet</h2>
         <form id="compose-tweet">
           <textarea name="text" placeholder="What are you humming about?"></textarea>
-          <input type="submit" value="Tweet" />
+          <input class="button" type="submit" value="Tweet" />
           <span class="counter">140</span>
         </form>
         <p class="error-message"></p>
