@@ -24,3 +24,9 @@ Tweeter is a simple, single-page AJAX-based Twitter clone, using HTML5, CSS3, an
 - FontAwesome v5.6.1
 - JQuery v2.2.3
 - Moment
+
+## Screenshots
+
+![Screenshot of default homepage](https://github.com/ratofkryll/tweeter/blob/dev/final-refactor/docs/tweeter-default.png?raw=true)
+![Screenshot of compose form](https://github.com/ratofkryll/tweeter/blob/dev/final-refactor/docs/tweeter-compose.png?raw=true)
+![Screenshot of char count demo](https://github.com/ratofkryll/tweeter/blob/dev/final-refactor/docs/tweeter-charcount-demo.png?raw=true)
