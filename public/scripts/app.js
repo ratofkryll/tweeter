@@ -26,14 +26,14 @@ $(document).ready(() => {
     $tweetText.text(tweet.content.text);
     $tweetContent.append($tweetText);
 
-    $tweetFooter.append(
-      `<span class="posted-time">${moment(tweet.created_at).fromNow()}</span>
+    $tweetFooter.append(`
+      <span class="posted-time">${moment(tweet.created_at).fromNow()}</span>
       <div class="icons">
         <i class="fas fa-flag"></i>
         <i class="fas fa-retweet"></i>
         <i class="fas fa-heart"></i>
-      </div>`
-    );
+      </div>
+      `);
 
     $tweetContainer.append($tweetHeader, $tweetContent, $tweetFooter);
 
@@ -85,7 +85,7 @@ $(document).ready(() => {
     });
   });
 
-  // Show/hide tweet submission form & nav button behaviour
+  // Show/hide tweet submission form
   $('.compose').click(() => {
     $('#new-tweet').slideToggle('fast', () => {
       $('#new-tweet textarea').focus();

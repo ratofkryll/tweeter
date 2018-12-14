@@ -2,14 +2,17 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
+    <meta charset="utf-8" />
     <title>Tweeter - Home Page</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-
-
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous" />
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -25,10 +28,7 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
-
   <body>
-
-    <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png" alt="Hummingbird logo" />
       <span class="header">Tweeter</span>
@@ -36,14 +36,12 @@
         <span><i class="far fa-edit"></i> Compose</span>
       </div>
     </nav>
-
-    <!-- Page-specific (main) content here -->
     <main class="container">
       <section id="new-tweet">
         <h2>Compose Tweet</h2>
         <form id="compose-tweet">
           <textarea name="text" placeholder="What are you humming about?"></textarea>
-          <input type="submit" value="Tweet">
+          <input type="submit" value="Tweet" />
           <span class="counter">140</span>
         </form>
         <p class="error-message"></p>
@@ -51,6 +49,5 @@
       <section id="tweets-wrapper">
       </section>
     </main>
-
   </body>
 </html>
