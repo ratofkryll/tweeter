@@ -68,12 +68,16 @@
   float; left;
 }
 
-.icon {
-  width: 25px;
-  height: 25px;
-  margin-top: 0.35em;
+.icons {
+  color: #00a087;
+  font-size: 1.2em;
+  margin-top: 0.5em;
   float: right;
   visibility: hidden;
+}
+
+.icons i {
+  margin: 0 2px;
 }
 
 /* Hover behaviour */
@@ -85,6 +89,6 @@
   opacity: 1;
 }
 
-.tweets-container:hover footer .icon {
+.tweets-container:hover footer .icons {
   visibility: visible;
 }
