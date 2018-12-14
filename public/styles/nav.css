@@ -45,11 +45,8 @@
   vertical-align: center;
 }
 
-#nav-bar .compose img {
-  position: relative;
-  top: 8px;
-  width: 30px;
-  height: 30px;
+#nav-bar .compose i {
+  padding-right: 5px;
 }
 
 #nav-bar .compose:hover {
